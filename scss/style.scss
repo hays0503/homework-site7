@@ -136,4 +136,18 @@ body {
 
 // Блок о "нас"
 .about-block {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  h1 {
+    font-family: "OpenSans";
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    letter-spacing: 2.30625px;
+
+    color: #48555b;
+  }
 }
