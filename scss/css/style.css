@@ -186,8 +186,15 @@ body {
   flex-direction: row;
   text-align: left;
   -moz-column-gap: 5%;
-       column-gap: 5%;
-  width: 35%;
+  column-gap: 5%;
+  width: 100%;
+}
+.services h1 {
+  font-family: "OpenSans";
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 2.30625px;
+  color: #48555b;
 }
 .services span {
   font-family: "OpenSans", sans-serif;
