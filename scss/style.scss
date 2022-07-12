@@ -137,8 +137,17 @@ body {
 // Блок о "нас"
 .about-block {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+
+  .about-block-container {
+    width: 70%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   h1 {
     font-family: "OpenSans";
     font-size: 18px;
@@ -149,5 +158,99 @@ body {
     letter-spacing: 2.30625px;
 
     color: #48555b;
+  }
+
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    width: 40%;
+
+    span {
+      font-family: "OpenSans", sans-serif;
+      font-size: 20px;
+      line-height: 23px;
+      letter-spacing: 0.1875px;
+      color: #48555b;
+      font-weight: bold;
+      margin-bottom: 5%;
+    }
+    small {
+      font-family: "OpenSans", sans-serif;
+      font-size: 13px;
+      line-height: 23px;
+      letter-spacing: 0.1875px;
+
+      color: #48555b;
+    }
+  }
+
+  .right-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: left;
+    column-gap: 5%;
+    width: 35%;
+
+    .cart {
+      position: relative;
+      width: calc($windows-width/6.4);
+      height: calc($windows-width/4.8);
+
+      h1 {
+        font-family: "OpenSans";
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.1875px;
+
+        color: #ffffff;
+
+        top: 0px;
+        left: 10px;
+        position: absolute;
+        z-index: 1;
+      }
+      img {
+        z-index: 0;
+      }
+    }
+  }
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: left;
+  column-gap: 5%;
+  width: 35%;
+
+  span {
+    font-family: "OpenSans", sans-serif;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.1875px;
+    color: #48555b;
+    font-weight: bold;
+    margin-bottom: 5%;
+  }
+  small {
+    font-family: "OpenSans", sans-serif;
+    font-size: 13px;
+    line-height: 23px;
+    letter-spacing: 0.1875px;
+
+    color: #48555b;
+  }
+  button {
+    background: #00a4e5;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }

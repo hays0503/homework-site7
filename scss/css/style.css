@@ -106,8 +106,16 @@ body {
 
 .about-block {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+}
+.about-block .about-block-container {
+  width: 70%;
+  height: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .about-block h1 {
   font-family: "OpenSans";
@@ -118,4 +126,89 @@ body {
   text-align: center;
   letter-spacing: 2.30625px;
   color: #48555b;
+}
+.about-block .left-side {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 40%;
+}
+.about-block .left-side span {
+  font-family: "OpenSans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.1875px;
+  color: #48555b;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+.about-block .left-side small {
+  font-family: "OpenSans", sans-serif;
+  font-size: 13px;
+  line-height: 23px;
+  letter-spacing: 0.1875px;
+  color: #48555b;
+}
+.about-block .right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: left;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  width: 35%;
+}
+.about-block .right-side .cart {
+  position: relative;
+  width: 15.625vw;
+  height: 20.8333333333vw;
+}
+.about-block .right-side .cart h1 {
+  font-family: "OpenSans";
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.1875px;
+  color: #ffffff;
+  top: 0px;
+  left: 10px;
+  position: absolute;
+  z-index: 1;
+}
+.about-block .right-side .cart img {
+  z-index: 0;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: left;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  width: 35%;
+}
+.services span {
+  font-family: "OpenSans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.1875px;
+  color: #48555b;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+.services small {
+  font-family: "OpenSans", sans-serif;
+  font-size: 13px;
+  line-height: 23px;
+  letter-spacing: 0.1875px;
+  color: #48555b;
+}
+.services button {
+  background: #00a4e5;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }/*# sourceMappingURL=style.css.map */
