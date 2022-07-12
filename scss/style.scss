@@ -1,0 +1,139 @@
+@import url(./normalize.scss);
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+@import url(./bebas_neue_bold.scss);
+
+$windows-width: 100vw;
+
+html {
+  width: $windows-width;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  max-width: $windows-width;
+}
+
+//Основной блок
+.main-block {
+  max-width: $windows-width;
+}
+
+//"Чердак"
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+
+  min-width: $windows-width;
+  min-height: calc($windows-width/1.784);
+
+  //Задний фон
+  .header-bg {
+    min-width: $windows-width;
+
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 0;
+  }
+
+  //Логотип
+  .header-logo {
+    width: 8%;
+    height: auto;
+    position: absolute;
+    top: 5%;
+    left: 46.5%;
+    z-index: 1;
+  }
+
+  //Текст с описанием
+  .header-description {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2;
+
+    //Заголовок в описании
+    h1 {
+      font-family: "Bebas Neue Bold", sans-serif;
+      font-size: 60px;
+      line-height: 70px;
+      letter-spacing: 5.70937px;
+
+      color: #ffffff;
+    }
+
+    //Доп описание
+    small {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 19px;
+      color: #ffffff;
+    }
+  }
+}
+
+// Навигация
+.nav-bar {
+  width: $windows-width;
+  height: calc($windows-width/22.15);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  .nav-bar-container {
+    width: 70%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-bar-logo {
+    width: calc($windows-width/12.07);
+    height: calc($windows-width/89.78);
+  }
+
+  .nav-bar-menu {
+    nav {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+      align-items: flex-end;
+      letter-spacing: 1.09091px;
+      list-style: none;
+      gap: 10%;
+
+      color: #48555b;
+
+      li:hover {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        display: flex;
+        align-items: flex-end;
+        text-align: center;
+        letter-spacing: 1.09091px;
+
+        color: #00a4e5;
+      }
+    }
+  }
+}
+
+// Блок о "нас"
+.about-block {
+}
