@@ -2,7 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 @import url(./bebas_neue_bold.scss);
 
-$windows-width: 100vw;
+$windows-width: 98.64vw;
+@media (max-width: 1280px) {
+  $windows-width: 95vw;
+}
 
 html {
   width: $windows-width;
@@ -24,15 +27,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
 
-  min-width: $windows-width;
-  min-height: calc($windows-width/1.784);
+  width: $windows-width;
+  height: calc($windows-width/1.784);
+
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
   //Задний фон
   .header-bg {
-    min-width: $windows-width;
-
+    width: $windows-width;
+    height: 56.653812vw;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -71,7 +76,7 @@ body {
     }
 
     //Доп описание
-    small {
+    span {
       font-family: "Open Sans", sans-serif;
       font-size: 16px;
       line-height: 19px;
@@ -89,6 +94,8 @@ body {
   justify-content: center;
   align-items: center;
 
+  border: 1px solid #e6e6e6;
+
   .nav-bar-container {
     width: 70%;
     height: 100%;
@@ -104,7 +111,7 @@ body {
 
   .nav-bar-menu {
     nav {
-      font-family: "Open Sans";
+      font-family: "OpenSans", sans-serif;
       font-style: normal;
       font-weight: 600;
       font-size: 12px;
@@ -118,7 +125,7 @@ body {
       color: #48555b;
 
       li:hover {
-        font-family: "Open Sans";
+        font-family: "OpenSans", sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 12px;
@@ -141,6 +148,15 @@ body {
   justify-content: center;
   align-items: center;
 
+  &::before {
+    content: "";
+    margin-bottom: 5%;
+  }
+  &::after {
+    content: "";
+    margin-bottom: 5%;
+  }
+
   .about-block-container {
     width: 70%;
     height: 100%;
@@ -149,7 +165,7 @@ body {
     justify-content: space-between;
   }
   h1 {
-    font-family: "OpenSans";
+    font-family: "OpenSans", sans-serif;
     font-size: 18px;
     line-height: 21px;
     display: flex;
@@ -159,85 +175,14 @@ body {
 
     color: #48555b;
   }
-
-  .left-side {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-
-    width: 40%;
-
-    span {
-      font-family: "OpenSans", sans-serif;
-      font-size: 20px;
-      line-height: 23px;
-      letter-spacing: 0.1875px;
-      color: #48555b;
-      font-weight: bold;
-      margin-bottom: 5%;
-    }
-    small {
-      font-family: "OpenSans", sans-serif;
-      font-size: 13px;
-      line-height: 23px;
-      letter-spacing: 0.1875px;
-
-      color: #48555b;
-    }
-  }
-
-  .right-side {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    text-align: left;
-    column-gap: 5%;
-    width: 35%;
-
-    .cart {
-      position: relative;
-      width: calc($windows-width/6.4);
-      height: calc($windows-width/4.8);
-
-      h1 {
-        font-family: "OpenSans";
-        font-size: 24px;
-        line-height: 29px;
-        letter-spacing: 0.1875px;
-
-        color: #ffffff;
-
-        top: 0px;
-        left: 10px;
-        position: absolute;
-        z-index: 1;
-      }
-      img {
-        z-index: 0;
-      }
-    }
-  }
 }
 
-.services {
+.left-side {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   text-align: left;
-  -moz-column-gap: 5%;
-  column-gap: 5%;
-  width: 100%;
 
-  h1 {
-    font-family: "OpenSans";
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: 2.30625px;
-
-    color: #48555b;
-  }
+  width: 40%;
 
   span {
     font-family: "OpenSans", sans-serif;
@@ -256,11 +201,120 @@ body {
 
     color: #48555b;
   }
+}
+
+.right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: left;
+  column-gap: 5%;
+  width: 35%;
+
+  .cart {
+    position: relative;
+    width: calc($windows-width/6.4);
+    height: calc($windows-width/6.102);
+
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.7));
+
+    h1 {
+      font-family: "OpenSans", sans-serif;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 0.1875px;
+
+      color: #ffffff;
+
+      top: 0px;
+      left: 10px;
+      position: absolute;
+      z-index: 1;
+      text-align: left;
+    }
+    img {
+      z-index: 0;
+    }
+  }
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: left;
+  -moz-column-gap: 5%;
+  column-gap: 5%;
+  width: 100%;
+
+  &::after {
+    content: "";
+    margin-bottom: 15%;
+  }
+
+  h1 {
+    font-family: "OpenSans", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 2.30625px;
+
+    color: #48555b;
+  }
+
+  span {
+    font-family: "OpenSans", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  small {
+    font-family: "OpenSans", sans-serif;
+    font-size: 13px;
+    line-height: 23px;
+    letter-spacing: 0.1875px;
+
+    color: #48555b;
+  }
   button {
     background: #00a4e5;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: rgba($color: #000000, $alpha: 0);
+    border-radius: 3px;
+
+    font-family: "OpenSans", sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.5px;
+
+    color: #ffffff;
   }
+}
+
+#line {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 110%;
+    width: 50px;
+    height: 2px;
+    background-color: #00a4e5;
+    border: 2px solid #00a4e5;
+  }
+}
+
+#blue {
+  color: #16ace8;
+}
+
+a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+  text-decoration: none;
+  color: #666;
 }

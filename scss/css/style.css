@@ -2,29 +2,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 @import url(./bebas_neue_bold.scss);
 html {
-  width: 100vw;
+  width: 98.64vw;
 }
 
 body {
   margin: 0;
   padding: 0;
-  max-width: 100vw;
+  max-width: 98.64vw;
 }
 
 .main-block {
-  max-width: 100vw;
+  max-width: 98.64vw;
 }
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
-  min-width: 100vw;
-  min-height: 56.0538116592vw;
+  width: 98.64vw;
+  height: 55.2914798206vw;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .header .header-bg {
-  min-width: 100vw;
+  width: 98.64vw;
+  height: 56.653812vw;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -53,7 +54,7 @@ body {
   letter-spacing: 5.70937px;
   color: #ffffff;
 }
-.header .header-description small {
+.header .header-description span {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 19px;
@@ -61,11 +62,12 @@ body {
 }
 
 .nav-bar {
-  width: 100vw;
-  height: 4.5146726862vw;
+  width: 98.64vw;
+  height: 4.4532731377vw;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #e6e6e6;
 }
 .nav-bar .nav-bar-container {
   width: 70%;
@@ -75,11 +77,11 @@ body {
   align-items: center;
 }
 .nav-bar .nav-bar-logo {
-  width: 8.2850041425vw;
-  height: 1.113833816vw;
+  width: 8.1723280862vw;
+  height: 1.0986856761vw;
 }
 .nav-bar .nav-bar-menu nav {
-  font-family: "Open Sans";
+  font-family: "OpenSans", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
@@ -92,7 +94,7 @@ body {
   color: #48555b;
 }
 .nav-bar .nav-bar-menu nav li:hover {
-  font-family: "Open Sans";
+  font-family: "OpenSans", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -110,6 +112,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+.about-block::before {
+  content: "";
+  margin-bottom: 5%;
+}
+.about-block::after {
+  content: "";
+  margin-bottom: 5%;
+}
 .about-block .about-block-container {
   width: 70%;
   height: 100%;
@@ -118,7 +128,7 @@ body {
   justify-content: space-between;
 }
 .about-block h1 {
-  font-family: "OpenSans";
+  font-family: "OpenSans", sans-serif;
   font-size: 18px;
   line-height: 21px;
   display: flex;
@@ -127,13 +137,14 @@ body {
   letter-spacing: 2.30625px;
   color: #48555b;
 }
-.about-block .left-side {
+
+.left-side {
   display: flex;
   flex-direction: column;
   text-align: left;
   width: 40%;
 }
-.about-block .left-side span {
+.left-side span {
   font-family: "OpenSans", sans-serif;
   font-size: 20px;
   line-height: 23px;
@@ -142,14 +153,15 @@ body {
   font-weight: bold;
   margin-bottom: 5%;
 }
-.about-block .left-side small {
+.left-side small {
   font-family: "OpenSans", sans-serif;
   font-size: 13px;
   line-height: 23px;
   letter-spacing: 0.1875px;
   color: #48555b;
 }
-.about-block .right-side {
+
+.right-side {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,13 +171,14 @@ body {
        column-gap: 5%;
   width: 35%;
 }
-.about-block .right-side .cart {
+.right-side .cart {
   position: relative;
-  width: 15.625vw;
-  height: 20.8333333333vw;
+  width: 15.4125vw;
+  height: 16.1651917404vw;
+  filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.7));
 }
-.about-block .right-side .cart h1 {
-  font-family: "OpenSans";
+.right-side .cart h1 {
+  font-family: "OpenSans", sans-serif;
   font-size: 24px;
   line-height: 29px;
   letter-spacing: 0.1875px;
@@ -174,8 +187,9 @@ body {
   left: 10px;
   position: absolute;
   z-index: 1;
+  text-align: left;
 }
-.about-block .right-side .cart img {
+.right-side .cart img {
   z-index: 0;
 }
 
@@ -189,8 +203,12 @@ body {
   column-gap: 5%;
   width: 100%;
 }
+.services::after {
+  content: "";
+  margin-bottom: 15%;
+}
 .services h1 {
-  font-family: "OpenSans";
+  font-family: "OpenSans", sans-serif;
   font-size: 18px;
   line-height: 21px;
   letter-spacing: 2.30625px;
@@ -198,12 +216,8 @@ body {
 }
 .services span {
   font-family: "OpenSans", sans-serif;
-  font-size: 20px;
-  line-height: 23px;
-  letter-spacing: 0.1875px;
-  color: #48555b;
-  font-weight: bold;
-  margin-bottom: 5%;
+  font-size: 18px;
+  line-height: 21px;
 }
 .services small {
   font-family: "OpenSans", sans-serif;
@@ -214,8 +228,40 @@ body {
 }
 .services button {
   background: #00a4e5;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: rgba(0, 0, 0, 0);
+  border-radius: 3px;
+  font-family: "OpenSans", sans-serif;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+#line {
+  position: relative;
+}
+#line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 110%;
+  width: 50px;
+  height: 2px;
+  background-color: #00a4e5;
+  border: 2px solid #00a4e5;
+}
+
+#blue {
+  color: #16ace8;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: #666;
 }/*# sourceMappingURL=style.css.map */
