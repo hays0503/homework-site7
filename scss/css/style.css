@@ -80,7 +80,7 @@ body {
   width: 8.1723280862vw;
   height: 1.0986856761vw;
 }
-.nav-bar .nav-bar-menu nav {
+.nav-bar .nav-bar-menu nav ul {
   font-family: "OpenSans", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -198,10 +198,22 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  text-align: left;
+  text-align: center;
   -moz-column-gap: 5%;
   column-gap: 5%;
   width: 100%;
+}
+.services .services-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  text-align: left;
+  -moz-column-gap: 5%;
+  column-gap: 5%;
+  width: 65.5%;
+  padding-left: 10%;
+  padding-right: 5%;
 }
 .services::after {
   content: "";

@@ -111,18 +111,20 @@ body {
 
   .nav-bar-menu {
     nav {
-      font-family: "OpenSans", sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 12px;
-      line-height: 16px;
-      display: flex;
-      align-items: flex-end;
-      letter-spacing: 1.09091px;
-      list-style: none;
-      gap: 10%;
+      ul {
+        font-family: "OpenSans", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        display: flex;
+        align-items: flex-end;
+        letter-spacing: 1.09091px;
+        list-style: none;
+        gap: 10%;
 
-      color: #48555b;
+        color: #48555b;
+      }
 
       li:hover {
         font-family: "OpenSans", sans-serif;
@@ -244,11 +246,23 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  text-align: left;
+  text-align: center;
   -moz-column-gap: 5%;
   column-gap: 5%;
   width: 100%;
 
+  .services-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    text-align: left;
+    -moz-column-gap: 5%;
+    column-gap: 5%;
+    width: 65.5%;
+    padding-left: 10%;
+    padding-right: 5%;
+  }
   &::after {
     content: "";
     margin-bottom: 15%;
