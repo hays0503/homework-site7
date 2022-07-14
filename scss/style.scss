@@ -7,14 +7,49 @@ $windows-width: 98.64vw;
   $windows-width: 95vw;
 }
 
+@mixin w-h($width: inherit, $height: inherit) {
+  width: $width;
+  height: $height;
+}
+
+@mixin align-x-y(
+  $display: flex,
+  $justify_content: inherit,
+  $align_items: inherit,
+  $flex_direction: inherit
+) {
+  display: $display;
+  justify-content: $justify_content;
+  align-items: $align_items;
+  flex-direction: $flex_direction;
+}
+
+@mixin set-font(
+  $font-family: unset,
+  $font-size: unset,
+  $line-height: unset,
+  $letter-spacing: unset,
+  $color: unset,
+  $font-style: unset,
+  $font-weight: unset
+) {
+  font-family: $font-family, sans-serif;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  color: $color;
+  font-style: $font-style;
+  font-weight: $font-weight;
+}
+
 html {
-  width: $windows-width;
+  @include w-h($windows-width);
 }
 
 body {
+  max-width: $windows-width;
   margin: 0;
   padding: 0;
-  max-width: $windows-width;
 }
 
 //Основной блок
@@ -24,21 +59,17 @@ body {
 
 //"Чердак"
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: $windows-width;
-  height: calc($windows-width/1.784);
+  @include w-h($windows-width, calc($windows-width/1.784));
+  @include align-x-y(flex, center, center);
 
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
   //Задний фон
   .header-bg {
-    width: $windows-width;
-    height: 56.653812vw;
     position: absolute;
+    @include w-h($windows-width, 56.653812vw);
+
     margin-left: auto;
     margin-right: auto;
     z-index: 0;
@@ -46,9 +77,9 @@ body {
 
   //Логотип
   .header-logo {
-    width: 8%;
-    height: auto;
     position: absolute;
+    @include w-h(8%, auto);
+
     top: 5%;
     left: 46.5%;
     z-index: 1;
@@ -56,88 +87,68 @@ body {
 
   //Текст с описанием
   .header-description {
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    @include w-h(100%);
+    @include align-x-y(flex, center, center, column);
 
     z-index: 2;
 
     //Заголовок в описании
     h1 {
-      font-family: "Bebas Neue Bold", sans-serif;
-      font-size: 60px;
-      line-height: 70px;
-      letter-spacing: 5.70937px;
-
-      color: #ffffff;
+      @include set-font("Bebas Neue Bold", 60px, 70px, 5.70937px, #ffffff);
     }
 
     //Доп описание
     span {
-      font-family: "Open Sans", sans-serif;
-      font-size: 16px;
-      line-height: 19px;
-      color: #ffffff;
+      @include set-font("Open Sans", 16px, 19px, inherit, #ffffff);
     }
   }
 }
 
 // Навигация
 .nav-bar {
-  width: $windows-width;
-  height: calc($windows-width/22.15);
-
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  @include w-h($windows-width, calc($windows-width/22.15));
+  @include align-x-y(inline-flex, center, center);
 
   border: 1px solid #e6e6e6;
 
   .nav-bar-container {
-    width: 70%;
-    height: 100%;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
+    @include w-h(70%, 100%);
+    @include align-x-y(inline-flex, space-between, center);
   }
 
   .nav-bar-logo {
-    width: calc($windows-width/12.07);
-    height: calc($windows-width/89.78);
+    @include w-h(calc($windows-width/12.07), calc($windows-width/89.78));
   }
 
   .nav-bar-menu {
     nav {
       ul {
-        font-family: "OpenSans", sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 16px;
         display: flex;
-        align-items: flex-end;
-        letter-spacing: 1.09091px;
+        flex-direction: row;
+        @include set-font(
+          "OpenSans",
+          12px,
+          16px,
+          1.09091px,
+          #48555b,
+          normal,
+          600
+        );
         list-style: none;
         gap: 10%;
-
-        color: #48555b;
       }
 
       li:hover {
-        font-family: "OpenSans", sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 16px;
-        display: flex;
-        align-items: flex-end;
+        @include set-font(
+          "OpenSans",
+          12px,
+          16px,
+          1.09091px,
+          #00a4e5,
+          normal,
+          700
+        );
         text-align: center;
-        letter-spacing: 1.09091px;
-
-        color: #00a4e5;
       }
     }
   }
@@ -145,10 +156,8 @@ body {
 
 // Блок о "нас"
 .about-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include w-h(100%, 70%);
+  @include align-x-y(flex, center, center, column);
 
   &::before {
     content: "";
@@ -160,79 +169,47 @@ body {
   }
 
   .about-block-container {
-    width: 70%;
-    height: 100%;
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include w-h(70%, 100%);
+    @include align-x-y(inline-flex, space-between, inherit, row);
   }
   h1 {
-    font-family: "OpenSans", sans-serif;
-    font-size: 18px;
-    line-height: 21px;
-    display: flex;
-    align-items: flex-end;
-    text-align: center;
-    letter-spacing: 2.30625px;
-
-    color: #48555b;
+    @include set-font("OpenSans", 18px, 21px, 2.30625px, #00a4e5);
   }
 }
 
 .left-side {
   display: flex;
+  @include w-h(40%);
   flex-direction: column;
   text-align: left;
 
-  width: 40%;
-
   span {
-    font-family: "OpenSans", sans-serif;
-    font-size: 20px;
-    line-height: 23px;
-    letter-spacing: 0.1875px;
-    color: #48555b;
-    font-weight: bold;
     margin-bottom: 5%;
+    @include set-font("OpenSans", 20px, 23px, 0.1875px, #48555b, unset, bold);
   }
   small {
-    font-family: "OpenSans", sans-serif;
-    font-size: 13px;
-    line-height: 23px;
-    letter-spacing: 0.1875px;
-
-    color: #48555b;
+    @include set-font("OpenSans", 13px, 23px, 0.1875px, #48555b);
   }
 }
 
 .right-side {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  @include w-h(35%);
+  @include align-x-y(flex, center, center, row);
   text-align: left;
   column-gap: 5%;
-  width: 35%;
 
   .cart {
     position: relative;
-    width: calc($windows-width/6.4);
-    height: calc($windows-width/6.102);
+    @include w-h(calc($windows-width/6.4), calc($windows-width/6.102));
 
     filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.7));
 
     h1 {
-      font-family: "OpenSans", sans-serif;
-      font-size: 24px;
-      line-height: 29px;
-      letter-spacing: 0.1875px;
-
-      color: #ffffff;
-
+      position: absolute;
       top: 0px;
       left: 10px;
-      position: absolute;
       z-index: 1;
+      @include set-font("OpenSans", 24px, 29px, 0.1875px, #fff);
       text-align: left;
     }
     img {
@@ -242,26 +219,19 @@ body {
 }
 
 .services {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  @include w-h(100%);
+  @include align-x-y(flex, center, center, row);
   text-align: center;
-  -moz-column-gap: 5%;
   column-gap: 5%;
-  width: 100%;
 
   .services-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
+    @include w-h(65.5%);
+    @include align-x-y(flex, space-evenly, center, row);
     text-align: left;
-    -moz-column-gap: 5%;
-    column-gap: 5%;
-    width: 65.5%;
+
     padding-left: 10%;
     padding-right: 5%;
+    column-gap: 5%;
   }
   &::after {
     content: "";
@@ -269,42 +239,22 @@ body {
   }
 
   h1 {
-    font-family: "OpenSans", sans-serif;
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: 2.30625px;
-
-    color: #48555b;
+    @include set-font("OpenSans", 18px, 21px, 2.30625px, #48555b);
   }
 
   span {
-    font-family: "OpenSans", sans-serif;
-    font-size: 18px;
-    line-height: 21px;
+    @include set-font("OpenSans", 18px, 21px);
   }
   small {
-    font-family: "OpenSans", sans-serif;
-    font-size: 13px;
-    line-height: 23px;
-    letter-spacing: 0.1875px;
-
-    color: #48555b;
+    @include set-font("OpenSans", 13px, 23px, 0.1875px, #48555b);
   }
   button {
     background: #00a4e5;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 25px 10px 25px;
+
     border: rgba($color: #000000, $alpha: 0);
     border-radius: 3px;
-
-    font-family: "OpenSans", sans-serif;
-    font-size: 13px;
-    line-height: 15px;
-    letter-spacing: 0.5px;
-
-    color: #ffffff;
+    @include set-font("OpenSans", 13px, 15px, 0.5px, #fff);
   }
 }
 
@@ -313,10 +263,11 @@ body {
   &::after {
     content: "";
     position: absolute;
+    @include w-h(50px, 2px);
+
     left: 0;
     top: 110%;
-    width: 50px;
-    height: 2px;
+
     background-color: #00a4e5;
     border: 2px solid #00a4e5;
   }

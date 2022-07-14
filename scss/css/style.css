@@ -3,12 +3,13 @@
 @import url(./bebas_neue_bold.scss);
 html {
   width: 98.64vw;
+  height: inherit;
 }
 
 body {
+  max-width: 98.64vw;
   margin: 0;
   padding: 0;
-  max-width: 98.64vw;
 }
 
 .main-block {
@@ -16,35 +17,37 @@ body {
 }
 
 .header {
+  width: 98.64vw;
+  height: 55.2914798206vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 98.64vw;
-  height: 55.2914798206vw;
+  flex-direction: inherit;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .header .header-bg {
+  position: absolute;
   width: 98.64vw;
   height: 56.653812vw;
-  position: absolute;
   margin-left: auto;
   margin-right: auto;
   z-index: 0;
 }
 .header .header-logo {
+  position: absolute;
   width: 8%;
   height: auto;
-  position: absolute;
   top: 5%;
   left: 46.5%;
   z-index: 1;
 }
 .header .header-description {
-  display: flex;
-  flex-direction: column;
   width: 100%;
+  height: inherit;
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   z-index: 2;
 }
 .header .header-description h1 {
@@ -53,12 +56,17 @@ body {
   line-height: 70px;
   letter-spacing: 5.70937px;
   color: #ffffff;
+  font-style: unset;
+  font-weight: unset;
 }
 .header .header-description span {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 19px;
+  letter-spacing: inherit;
   color: #ffffff;
+  font-style: unset;
+  font-weight: unset;
 }
 
 .nav-bar {
@@ -67,6 +75,7 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  flex-direction: inherit;
   border: 1px solid #e6e6e6;
 }
 .nav-bar .nav-bar-container {
@@ -75,42 +84,43 @@ body {
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: inherit;
 }
 .nav-bar .nav-bar-logo {
   width: 8.1723280862vw;
   height: 1.0986856761vw;
 }
 .nav-bar .nav-bar-menu nav ul {
+  display: flex;
+  flex-direction: row;
   font-family: "OpenSans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
   font-size: 12px;
   line-height: 16px;
-  display: flex;
-  align-items: flex-end;
   letter-spacing: 1.09091px;
+  color: #48555b;
+  font-style: normal;
+  font-weight: 600;
   list-style: none;
   gap: 10%;
-  color: #48555b;
 }
 .nav-bar .nav-bar-menu nav li:hover {
   font-family: "OpenSans", sans-serif;
-  font-style: normal;
-  font-weight: 700;
   font-size: 12px;
   line-height: 16px;
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
   letter-spacing: 1.09091px;
   color: #00a4e5;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
 }
 
 .about-block {
+  width: 100%;
+  height: 70%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .about-block::before {
   content: "";
@@ -124,34 +134,36 @@ body {
   width: 70%;
   height: 100%;
   display: inline-flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: inherit;
+  flex-direction: row;
 }
 .about-block h1 {
   font-family: "OpenSans", sans-serif;
   font-size: 18px;
   line-height: 21px;
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
   letter-spacing: 2.30625px;
-  color: #48555b;
+  color: #00a4e5;
+  font-style: unset;
+  font-weight: unset;
 }
 
 .left-side {
   display: flex;
+  width: 40%;
+  height: inherit;
   flex-direction: column;
   text-align: left;
-  width: 40%;
 }
 .left-side span {
+  margin-bottom: 5%;
   font-family: "OpenSans", sans-serif;
   font-size: 20px;
   line-height: 23px;
   letter-spacing: 0.1875px;
   color: #48555b;
+  font-style: unset;
   font-weight: bold;
-  margin-bottom: 5%;
 }
 .left-side small {
   font-family: "OpenSans", sans-serif;
@@ -159,9 +171,13 @@ body {
   line-height: 23px;
   letter-spacing: 0.1875px;
   color: #48555b;
+  font-style: unset;
+  font-weight: unset;
 }
 
 .right-side {
+  width: 35%;
+  height: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,7 +185,6 @@ body {
   text-align: left;
   -moz-column-gap: 5%;
        column-gap: 5%;
-  width: 35%;
 }
 .right-side .cart {
   position: relative;
@@ -178,15 +193,17 @@ body {
   filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.7));
 }
 .right-side .cart h1 {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  z-index: 1;
   font-family: "OpenSans", sans-serif;
   font-size: 24px;
   line-height: 29px;
   letter-spacing: 0.1875px;
-  color: #ffffff;
-  top: 0px;
-  left: 10px;
-  position: absolute;
-  z-index: 1;
+  color: #fff;
+  font-style: unset;
+  font-weight: unset;
   text-align: left;
 }
 .right-side .cart img {
@@ -194,26 +211,28 @@ body {
 }
 
 .services {
+  width: 100%;
+  height: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   text-align: center;
   -moz-column-gap: 5%;
-  column-gap: 5%;
-  width: 100%;
+       column-gap: 5%;
 }
 .services .services-container {
+  width: 65.5%;
+  height: inherit;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
   text-align: left;
-  -moz-column-gap: 5%;
-  column-gap: 5%;
-  width: 65.5%;
   padding-left: 10%;
   padding-right: 5%;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
 }
 .services::after {
   content: "";
@@ -225,11 +244,17 @@ body {
   line-height: 21px;
   letter-spacing: 2.30625px;
   color: #48555b;
+  font-style: unset;
+  font-weight: unset;
 }
 .services span {
   font-family: "OpenSans", sans-serif;
   font-size: 18px;
   line-height: 21px;
+  letter-spacing: unset;
+  color: unset;
+  font-style: unset;
+  font-weight: unset;
 }
 .services small {
   font-family: "OpenSans", sans-serif;
@@ -237,20 +262,21 @@ body {
   line-height: 23px;
   letter-spacing: 0.1875px;
   color: #48555b;
+  font-style: unset;
+  font-weight: unset;
 }
 .services button {
   background: #00a4e5;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 25px 10px 25px;
   border: rgba(0, 0, 0, 0);
   border-radius: 3px;
   font-family: "OpenSans", sans-serif;
   font-size: 13px;
   line-height: 15px;
   letter-spacing: 0.5px;
-  color: #ffffff;
+  color: #fff;
+  font-style: unset;
+  font-weight: unset;
 }
 
 #line {
@@ -259,10 +285,10 @@ body {
 #line::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 110%;
   width: 50px;
   height: 2px;
+  left: 0;
+  top: 110%;
   background-color: #00a4e5;
   border: 2px solid #00a4e5;
 }
